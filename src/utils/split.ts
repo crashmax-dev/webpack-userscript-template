@@ -1,0 +1,1 @@
+export const split = (str: string): object => str.split(' ')
