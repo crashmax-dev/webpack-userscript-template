@@ -4,7 +4,7 @@ import WebpackUserscript from 'webpack-userscript'
 import { UserScriptConfig } from './userscript.config'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 
-const { isDev, isChrome, PORT, scriptFileName, scriptHeaders } = UserScriptConfig
+const { isDev, isChrome, devPath, devPort, scriptFileName, scriptHeaders } = UserScriptConfig
 const outputPath = path.resolve(__dirname, 'dist')
 
 module.exports = {
@@ -32,7 +32,7 @@ module.exports = {
     },
     devServer: {
         https: true,
-        port: PORT,
+        port: devPort,
         writeToDisk: true,
         contentBase: outputPath,
         hot: false,
@@ -45,9 +45,7 @@ module.exports = {
             headers: scriptHeaders,
             proxyScript: {
                 // file:/// using for Google Chrome else https:// for Mozilla Firefox
-                baseUrl: isChrome ?
-                    `${url.pathToFileURL(outputPath)}` :
-                    `https://localhost:${PORT}`,
+                baseUrl: isChrome ? url.pathToFileURL(outputPath).toString() : devPath,
                 enable: isDev
             }
         })
