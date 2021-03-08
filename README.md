@@ -6,12 +6,12 @@
 
 > This template is based on [Webpack](https://github.com/webpack/webpack) and [webpack-userscript](https://github.com/momocow/webpack-userscript), written in typescript. [TypeScript](https://github.com/microsoft/TypeScript).
 
-Development:
+Dev:
 ------------
 1. install dependencies `npm install`
 2. run dev server `npm run dev`
 3. open `https://localhost:8080` in browser (click Advanced -> proceed if it shows a security warning) to install the proxy script.
 
-Building:
+Build:
 ---------
 1. usage `npm run build`
