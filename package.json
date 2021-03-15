@@ -2,7 +2,7 @@
     "name": "webpack-userscript-template",
     "description": "🚀 Userscript developed with modern tech powered by webpack",
     "homepage": "https://github.com/crashmax-off/webpack-userscript-template",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "author": {
         "name": "Vitalij Ryndin",
         "email": "sys@crashmax.ru",

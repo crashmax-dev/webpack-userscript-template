@@ -2,7 +2,7 @@ interface HTMLAttributes extends EventHandlersType {
     alt?: string
     async?: boolean
     accept?: string
-    autoComplete?: 'on' | 'off'
+    autoComplete?: string
     autoFocus?: boolean
     autoPlay?: boolean
     capture?: boolean | string
@@ -76,21 +76,16 @@ type CSSStyle = {
     [key in keyof CSSStyleDeclaration]?: string | number
 }
 
-interface IAttributes extends HTMLAttributes {
+interface Attributes extends HTMLAttributes {
     style?: CSSStyle
 }
 
-type createElement = (
-    tagName: keyof HTMLElementTagNameMap,
-    attributes?: IAttributes
-) => HTMLElementTagNameMap[typeof tagName]
-
 /**
- * 
+ * createElement
  * @param tagName
  * @param attributes
  */
-const ce: createElement = (tagName, attributes) => {
+function ce<K extends keyof HTMLElementTagNameMap>(tagName: K, attributes?: Attributes) {
     const elem = document.createElement(tagName)
 
     Object.assign(elem, attributes)
@@ -100,19 +95,17 @@ const ce: createElement = (tagName, attributes) => {
 }
 
 /**
- * 
- * @param e
+ * querySelector
  */
-const qs = (e: string) => (<HTMLElement>document.querySelector(e))
+const qs = document.querySelector.bind(document)
 
 /**
- * 
- * @param e
+ * querySelectorAll
  */
-const qsa = (e: string) => <NodeListOf<HTMLElement>>document.querySelectorAll(e)
+const qsa = document.querySelectorAll.bind(document)
 
 /**
- * 
+ * CSS Assign
  * @param elem
  * @param style
  */
