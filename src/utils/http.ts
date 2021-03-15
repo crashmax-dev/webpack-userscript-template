@@ -4,14 +4,16 @@ interface HttpResponse<T> extends Response {
 }
 
 /**
- * 
- * @param method
+ * fetch
  * @param url
- * @param body
+ * @param params
  */
-export async function http<T>(method: 'GET' | 'POST', url: string, body?: BodyInit): Promise<HttpResponse<T>> {
+async function http<T>(url: string, params: RequestInit): Promise<HttpResponse<T>> {
+    const { method, headers, body } = params
+
     const response: HttpResponse<T> = await fetch(url, {
         method: method,
+        headers: headers,
         body: body
     })
 
@@ -22,4 +24,8 @@ export async function http<T>(method: 'GET' | 'POST', url: string, body?: BodyIn
     }
 
     return response
+}
+
+export {
+    http
 }
