@@ -1,10 +1,20 @@
 import url from 'url'
 import path from 'path'
+import webpack from 'webpack'
 import WebpackUserscript from 'webpack-userscript'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 import { UserScriptConfig } from './userscript.config'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 
-const { isDev, PORT, scriptFileName, scriptHeaders } = UserScriptConfig
+const {
+    PORT,
+    isDev,
+    scriptHeaders,
+    scriptVersion,
+    scriptHomepage,
+    scriptFileName
+} = UserScriptConfig
+const assetsFolder = path.resolve(__dirname, 'assets')
 const outputPath = path.resolve(__dirname, 'dist')
 
 module.exports = {
@@ -60,6 +70,19 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
+        new webpack.DefinePlugin({
+            DEV_MODE: JSON.stringify(process.env.NODE_ENV),
+            APP_VERSION: JSON.stringify(scriptVersion),
+            BASE_PATH: JSON.stringify(isDev ? `https://localhost:${PORT}/` : scriptHomepage)
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: assetsFolder,
+                    to: outputPath
+                }
+            ]
+        }),
         new WebpackUserscript({
             headers: scriptHeaders,
             proxyScript: {

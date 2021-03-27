@@ -1,8 +1,8 @@
 {
     "name": "webpack-userscript-template",
     "description": "🚀 Userscript developed with modern tech powered by webpack",
-    "homepage": "https://github.com/crashmax-off/webpack-userscript-template",
-    "version": "1.1.1",
+    "homepage": "https://crashmax-off.github.io/webpack-userscript-template/",
+    "version": "1.1.2",
     "author": {
         "name": "Vitalij Ryndin",
         "email": "sys@crashmax.ru",
@@ -15,12 +15,14 @@
     "devDependencies": {
         "@babel/core": "^7.12.10",
         "@babel/preset-env": "^7.12.11",
+        "@types/copy-webpack-plugin": "^6.3.0",
         "@types/node": "^14.11.8",
         "@types/tampermonkey": "^4.0.0",
         "@types/webpack": "^4.41.22",
         "@types/webpack-dev-server": "^3.11.0",
         "babel-loader": "^8.2.2",
         "clean-webpack-plugin": "^3.0.0",
+        "copy-webpack-plugin": "^6.3.0",
         "core-js": "^2.6.12",
         "cross-env": "^7.0.3",
         "css-loader": "^5.0.1",
