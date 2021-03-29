@@ -4,7 +4,7 @@ interface HttpResponse<T> extends Response {
 }
 
 /**
- * fetch
+ * 
  * @param url
  * @param params
  */

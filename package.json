@@ -35,5 +35,8 @@
         "webpack-cli": "^3.3.12",
         "webpack-dev-server": "^3.11.0",
         "webpack-userscript": "^2.5.6"
+    },
+    "dependencies": {
+        "selector-observer": "^2.1.6"
     }
 }

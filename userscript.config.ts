@@ -2,21 +2,11 @@ import WebpackUserscript from 'webpack-userscript'
 import pkg from './package.json'
 
 interface IWebpackUserScript {
-    /* development mode */
-    isDev: boolean
-
-    /* http port */
-    PORT: number
-
-    /**
-     * userscript version
-     */
+    /* userscript version */
     scriptVersion: string
 
-    /**
-     * homepage url (github pages)
-     */
-    scriptHomepage: string
+    /* homepage url (github pages) */
+    scriptHomePage: string
 
     /* script file name, without file extension */
     scriptFileName: string
@@ -30,10 +20,8 @@ interface IWebpackUserScript {
 }
 
 export const UserScriptConfig: IWebpackUserScript = {
-    isDev: process.env.NODE_ENV === 'development',
-    PORT: 8080,
     scriptVersion: pkg.version,
-    scriptHomepage: pkg.homepage,
+    scriptHomePage: pkg.homepage,
     scriptFileName: pkg.name,
     scriptHeaders: {
         name: pkg.name,

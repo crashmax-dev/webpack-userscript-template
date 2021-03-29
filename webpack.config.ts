@@ -7,15 +7,17 @@ import { UserScriptConfig } from './userscript.config'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 
 const {
-    PORT,
-    isDev,
     scriptHeaders,
     scriptVersion,
-    scriptHomepage,
+    scriptHomePage,
     scriptFileName
 } = UserScriptConfig
+
+/* webpack configuration */
 const assetsFolder = path.resolve(__dirname, 'assets')
 const outputPath = path.resolve(__dirname, 'dist')
+const isDev = process.env.NODE_ENV === 'development'
+const PORT = 8080
 
 module.exports = {
     mode: isDev ? 'development' : 'production',
@@ -65,15 +67,14 @@ module.exports = {
         port: PORT,
         writeToDisk: true,
         disableHostCheck: true,
-        contentBase: outputPath,
-        headers: { 'Access-Control-Allow-Origin': '*' }
+        contentBase: outputPath
     },
     plugins: [
         new CleanWebpackPlugin(),
         new webpack.DefinePlugin({
             DEV_MODE: JSON.stringify(process.env.NODE_ENV),
             APP_VERSION: JSON.stringify(scriptVersion),
-            BASE_PATH: JSON.stringify(isDev ? `https://localhost:${PORT}/` : scriptHomepage)
+            BASE_PATH: JSON.stringify(isDev ? `https://localhost:${PORT}/` : scriptHomePage)
         }),
         new CopyWebpackPlugin({
             patterns: [

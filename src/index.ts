@@ -4,6 +4,8 @@ import {
     http
 } from './utils'
 
+// import { observe } from 'selector-observer'
+
 import './style.css'
 
 (() => {
@@ -37,7 +39,7 @@ import './style.css'
     qs('a')!.href = 'https://github.com/crashmax-off/webpack-userscript-template'
 
     /**
-     * fetch
+     * Fetch example
      */
     interface ITodos {
         completed: boolean

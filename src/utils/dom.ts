@@ -81,9 +81,10 @@ interface Attributes extends HTMLAttributes {
 }
 
 /**
- * createElement
- * @param tagName
- * @param attributes
+ * 
+ * @param tagName 
+ * @param attributes 
+ * @returns 
  */
 function ce<K extends keyof HTMLElementTagNameMap>(tagName: K, attributes?: Attributes) {
     const elem = document.createElement(tagName)
@@ -95,21 +96,16 @@ function ce<K extends keyof HTMLElementTagNameMap>(tagName: K, attributes?: Attr
 }
 
 /**
- * querySelector
- */
-const qs = document.querySelector.bind(document)
-
-/**
- * querySelectorAll
- */
-const qsa = document.querySelectorAll.bind(document)
-
-/**
- * CSS Assign
- * @param elem
- * @param style
+ * 
+ * @param elem 
+ * @param style 
+ * @returns 
  */
 const css = (elem: HTMLElement, style: CSSStyle) => Object.assign(elem.style, style)
+
+const qs = document.querySelector.bind(document)
+
+const qsa = document.querySelectorAll.bind(document)
 
 export {
     ce,
