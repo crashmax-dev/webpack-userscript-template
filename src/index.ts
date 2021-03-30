@@ -7,7 +7,7 @@ import {
 // import { observe } from 'selector-observer'
 
 // import './style.css'
-import './style.css'
+import './style.scss'
 
 (() => {
     /**
