@@ -28,6 +28,12 @@ export const UserScriptConfig: IWebpackUserScript = {
         description: pkg.description,
         version: pkg.version,
         author: pkg.author.name,
-        include: '/^(http|https)://(example.com|example.org|example.edu).*$/'
+        include: '/^(http|https)://(example.com|example.org|example.edu).*$/',
+        grant: [
+            'GM_addValueChangeListener',
+            'GM_addStyle',
+            'GM_setValue',
+            'GM_getValue'
+        ]
     }
 }
