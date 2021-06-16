@@ -1,6 +1,7 @@
 import {
     addStyle,
-    addValueChangeListener
+    addValueChangeListener,
+    listValues
 } from './tampermonkey'
 
 import './style.scss'
@@ -8,4 +9,5 @@ import './style.scss'
 (() => {
     addStyle()
     addValueChangeListener()
+    listValues()
 })()

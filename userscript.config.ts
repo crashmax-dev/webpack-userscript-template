@@ -33,7 +33,8 @@ export const UserScriptConfig: IWebpackUserScript = {
             'GM_addValueChangeListener',
             'GM_addStyle',
             'GM_setValue',
-            'GM_getValue'
+            'GM_getValue',
+            'GM_listValues'
         ]
     }
 }
