@@ -1,16 +1,16 @@
 body {
-    color: #FFF;
-    background: #444;
+  color: #FFF;
+  background: #444;
 }
 
 body>div {
-    background: #333;
+  background: #333;
 }
 
 a {
-    color: #ff9800 !important;
+  color: #ff9800 !important;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
