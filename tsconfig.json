@@ -1,16 +1,25 @@
 {
-    "compilerOptions": {
-        "esModuleInterop": true,
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "strict": true,
-        "target": "es2019"
-    },
-    "include": [
-        "src/*"
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "es6",
+    "lib": [
+      "es6",
+      "dom"
     ],
-    "exclude": [
-        "node_modules/"
-    ]
+    "strict": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strictPropertyInitialization": false,
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "typeRoots": [
+    "node_modules/@types"
+  ],
+  "include": [
+    "src/**/*"
+  ]
 }
