@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        webpack-userscript-template
-// @version     1.1.2
+// @version     1.2.0
 // @author      Vitalij Ryndin
 // @description 🚀 Userscript developed with modern tech powered by webpack
 // @homepage    https://crashmax-off.github.io/webpack-userscript-template/
