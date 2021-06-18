@@ -1,44 +1,45 @@
 {
     "name": "webpack-userscript-template",
+    "version": "1.2.0",
     "description": "🚀 Userscript developed with modern tech powered by webpack",
     "homepage": "https://crashmax-off.github.io/webpack-userscript-template/",
-    "version": "1.1.2",
+    "scripts": {
+        "dev": "webpack server --node-env development",
+        "build": "webpack --node-env production --progress",
+        "lint": "eslint src/**/*.ts",
+        "lint:fix": "eslint src/**/*.ts --fix"
+    },
     "author": {
         "name": "Vitalij Ryndin",
         "email": "sys@crashmax.ru",
         "url": "https://crashmax.ru"
     },
-    "scripts": {
-        "dev": "cross-env NODE_ENV=development webpack-dev-server --config-name main --host localhost --watch-poll",
-        "build": "cross-env NODE_ENV=production webpack --progress"
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crashmax-dev/webpack-userscript-template.git"
     },
     "devDependencies": {
-        "@babel/core": "^7.12.10",
-        "@babel/preset-env": "^7.12.11",
-        "@types/copy-webpack-plugin": "^6.3.0",
-        "@types/node": "^14.11.8",
+        "@babel/core": "^7.14.3",
+        "@babel/preset-env": "^7.14.4",
+        "@types/copy-webpack-plugin": "^8.0.0",
         "@types/tampermonkey": "^4.0.0",
-        "@types/webpack": "^4.41.22",
-        "@types/webpack-dev-server": "^3.11.0",
+        "@types/webpack": "^4.41.29",
+        "@types/webpack-dev-server": "^3.11.4",
         "babel-loader": "^8.2.2",
         "clean-webpack-plugin": "^3.0.0",
-        "copy-webpack-plugin": "^6.3.0",
-        "core-js": "^2.6.12",
-        "cross-env": "^7.0.3",
+        "copy-webpack-plugin": "^6.2.1",
+        "eslint": "^7.28.0",
         "css-loader": "^5.0.1",
-        "regenerator-runtime": "^0.13.7",
         "sass": "^1.32.8",
         "sass-loader": "^10.1.1",
         "style-loader": "^2.0.0",
-        "ts-loader": "^8.0.4",
-        "ts-node": "^9.0.0",
-        "typescript": "^4.0.2",
+        "ts-loader": "^8.0.14",
+        "ts-node": "^10.0.0",
+        "typescript": "^4.3.2",
         "webpack": "^4.46.0",
-        "webpack-cli": "^3.3.12",
-        "webpack-dev-server": "^3.11.0",
-        "webpack-userscript": "^2.5.6"
-    },
-    "dependencies": {
-        "selector-observer": "^2.1.6"
+        "webpack-cli": "^4.7.2",
+        "webpack-dev-server": "^3.11.2",
+        "webpack-userscript": "^2.5.8"
     }
 }
