@@ -1,4 +1,5 @@
-import { ce, qs, request } from './utils'
+import { el, mount } from 'redom'
+import fetcher from './utils/fetcher'
 
 // import './style.css'
 import './style.scss'
@@ -6,7 +7,7 @@ import './style.scss'
 /**
  * DOM Manipulation
  */
-const logo = ce('img', {
+const logo = el('img', {
   src: BASE_PATH + 'typescript.png',
   style: {
     display: 'block',
@@ -15,10 +16,10 @@ const logo = ce('img', {
   }
 })
 
-const body = qs('body > div')
-body?.prepend(logo)
 
-const title = ce('h1', {
+mount(document.querySelector('body > div')!, logo)
+
+const title = el('h1', {
   innerHTML: '🚀 Typescript + Webpack userscript template!',
   style: {
     cursor: 'pointer'
@@ -28,20 +29,18 @@ const title = ce('h1', {
   }
 })
 
-const h1 = qs('h1')
-h1?.replaceWith(title)
+const h1 = document.querySelector('h1')
+h1!.replaceWith(title)
 
-const p = qs('p')
+const p = document.querySelector('p')
 if (p) {
   p.textContent = 'This template is based on Webpack and webpack-userscript, written in TypeScript.'
-  p.appendChild(ce('a', {
+  p.appendChild(el('a', {
     href: 'https://github.com/crashmax-off/webpack-userscript-template'
   }))
 }
 
-/**
- * Fetch example
- */
+/** fetch example */
 interface ITodos {
   completed: boolean
   id: number
@@ -49,16 +48,14 @@ interface ITodos {
   userId: number
 }
 
-request<ITodos>('https://jsonplaceholder.typicode.com/todos/10', {
-  method: 'GET'
-}).then(({ response, data }) => {
+fetcher<ITodos>(
+  'https://jsonplaceholder.typicode.com/todos/10',
+  { method: 'GET' }
+).then((response) => {
   console.log(response)
-  console.table(data)
 })
 
-/**
- * Webpack define
- */
+/** webpack define */
 console.log(DEV_MODE)
 console.log(BASE_PATH)
 console.log(APP_VERSION)

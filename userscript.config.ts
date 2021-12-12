@@ -1,5 +1,5 @@
 import pkg from './package.json'
-import WebpackUserscript from 'webpack-userscript'
+import type { WPUSOptions } from 'webpack-userscript'
 
 interface IWebpackUserScript {
   /* userscript version */
@@ -16,7 +16,7 @@ interface IWebpackUserScript {
    * including script name, description, match url, grants and so on
    * see https://www.tampermonkey.net/documentation.php for details
    **/
-  scriptHeaders: WebpackUserscript.WPUSOptions['headers']
+  scriptHeaders: WPUSOptions['headers']
 }
 
 export const UserScriptConfig: IWebpackUserScript = {
