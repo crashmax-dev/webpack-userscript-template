@@ -1,19 +1,20 @@
 import url from 'url'
 import path from 'path'
-import webpack from 'webpack'
 import WebpackUserscript from 'webpack-userscript'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
+import { DefinePlugin, Configuration } from 'webpack'
 import { UserScriptConfig } from './userscript.config'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 
 const { scriptHeaders, scriptVersion, scriptHomePage, scriptFileName } = UserScriptConfig
 const publicFolder = path.resolve(__dirname, 'public')
 const outputPath = path.resolve(__dirname, 'dist')
-const isDev = process.env.NODE_ENV === 'development'
+const mode = process.env.NODE_ENV || 'development'
+const isDev = mode === 'development'
 const port = 8080
 
 module.exports = {
-  mode: process.env.NODE_ENV,
+  mode,
   target: 'web',
   entry: path.join(__dirname, 'src/index.ts'),
   output: {
@@ -38,33 +39,7 @@ module.exports = {
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                [
-                  '@babel/preset-env',
-                  {
-                    targets: {
-                      esmodules: true
-                    }
-                  }
-                ]
-              ]
-            }
-          },
-          {
-            loader: 'ts-loader'
-          }
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
@@ -78,9 +53,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new webpack.DefinePlugin({
-      DEV_MODE: JSON.stringify(process.env.NODE_ENV),
-      APP_VERSION: JSON.stringify(scriptVersion),
+    new DefinePlugin({
+      VERSION: JSON.stringify(scriptVersion),
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       BASE_PATH: JSON.stringify(isDev ? `https://localhost:${port}/` : scriptHomePage)
     }),
     new CopyWebpackPlugin({
@@ -99,4 +74,4 @@ module.exports = {
       }
     })
   ]
-} as webpack.Configuration
+} as Configuration
