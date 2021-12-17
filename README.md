@@ -5,10 +5,10 @@
 
 > This template is based on [Webpack](https://github.com/webpack/webpack) and [webpack-userscript](https://github.com/momocow/webpack-userscript), written in [TypeScript](https://github.com/microsoft/TypeScript).
 
-## Development
-1. install dependencies `npm install`
-2. run dev server `npm run dev`
-3. open `https://localhost:8080` in browser (click Advanced -> proceed if it shows a security warning) to install the proxy script.
+## Quick start
 
-## Build
-1. usage `npm run build`
+> `npm install`
+
+> `npm run dev`
+
+> Open `https://localhost:8080` in browser (click Advanced -> proceed if it shows a security warning) to install the proxy script.
