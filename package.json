@@ -1,6 +1,6 @@
 {
   "name": "webpack-userscript-template",
-  "version": "1.2.0",
+  "version": "0.0.1",
   "description": "webpack-userscript-template",
   "homepage": "https://crashmax-off.github.io/webpack-userscript-template/",
   "scripts": {
@@ -19,10 +19,11 @@
     "type": "git",
     "url": "git+https://github.com/crashmax-dev/webpack-userscript-template.git"
   },
+  "dependencies": {
+    "redom": "^3.27.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.16.5",
-    "@babel/plugin-proposal-class-properties": "^7.16.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
     "@babel/register": "^7.16.5",
@@ -42,8 +43,5 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^3.11.3",
     "webpack-userscript": "^2.5.8"
-  },
-  "dependencies": {
-    "redom": "^3.27.1"
   }
 }
