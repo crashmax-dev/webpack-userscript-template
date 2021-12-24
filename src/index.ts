@@ -1,6 +1,6 @@
 import { el, mount } from 'redom'
 import fetcher from './utils/fetcher'
-import './global.scss'
+import './styles/global.scss'
 
 (async () => {
   /** RE:DOM */
