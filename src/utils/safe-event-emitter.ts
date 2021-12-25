@@ -3,11 +3,11 @@ import type TypedEmitter from 'typed-emitter'
 import type { EventsEmitter } from '../types/events-emitter'
 
 // https://github.com/andywer/typed-emitter#extending-an-emitter
-class SafeEventEmitter extends (EventEmitter as new () => TypedEmitter<EventsEmitter>) {
+export class SafeEventEmitter<T> extends (EventEmitter as { new <T>(): TypedEmitter<T> })<T> {
   constructor() {
     super()
     this.setMaxListeners(100)
   }
 }
 
-export default new SafeEventEmitter()
+export default new SafeEventEmitter<EventsEmitter>()
