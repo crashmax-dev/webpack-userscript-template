@@ -1,5 +1,6 @@
 import url from 'url'
 import path from 'path'
+import TerserPlugin from 'terser-webpack-plugin'
 import WebpackUserscript from 'webpack-userscript'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import { DefinePlugin, Configuration } from 'webpack'
@@ -29,7 +30,16 @@ module.exports = {
     contentBase: outputPath
   },
   optimization: {
-    minimize: !isDev
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+        terserOptions: {
+          output: { comments: false },
+          compress: true
+        }
+      })
+    ]
   },
   resolve: {
     extensions: ['.ts', '.js']
