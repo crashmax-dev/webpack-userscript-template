@@ -23,10 +23,10 @@
     "redom": "^3.27.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.5",
-    "@babel/preset-env": "^7.16.5",
-    "@babel/preset-typescript": "^7.16.5",
-    "@babel/register": "^7.16.5",
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@babel/register": "^7.16.9",
     "@crashmax/eslint-config": "^1.0.4",
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/tampermonkey": "^4.0.5",
@@ -37,13 +37,13 @@
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.2.1",
     "css-loader": "^5.2.7",
-    "sass-loader": "^10.1.1",
+    "sass-loader": "^10.2.1",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^4.2.3",
-    "typed-emitter": "^1.4.0",
-    "typescript": "^4.5.4",
+    "typed-emitter": "^2.1.0",
+    "typescript": "^4.5.5",
     "webpack": "^4.46.0",
-    "webpack-cli": "^4.9.1",
+    "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^3.11.3",
     "webpack-userscript": "^2.5.8"
   }

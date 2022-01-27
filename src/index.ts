@@ -1,5 +1,6 @@
 import { el, mount } from 'redom'
 import fetcher from './utils/fetcher'
+import watcher from './utils/safe-event-emitter'
 import './styles/global.scss'
 
 (async () => {
