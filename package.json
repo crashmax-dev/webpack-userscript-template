@@ -27,7 +27,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@babel/register": "^7.16.9",
-    "@crashmax/eslint-config": "^1.0.4",
+    "@crashmax/eslint-config": "^1.1.0",
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/tampermonkey": "^4.0.5",
     "@types/terser-webpack-plugin": "^4.2.2",

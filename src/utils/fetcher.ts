@@ -6,7 +6,7 @@ export default async function fetcher<T = unknown>(
 
   // if the server replies, there's always some data in json
   // if there's a network error, it will throw at the previous line
-  const data = await response.json()
+  const data = await response.json() as T
 
   // response.ok is true when res.status is 2xx
   // https://developer.mozilla.org/en-US/docs/Web/API/Response/ok
@@ -23,7 +23,7 @@ export default async function fetcher<T = unknown>(
 
 export class FetchError extends Error {
   response: Response
-  data: { message: string }
+  data: unknown
 
   constructor({
     message,
@@ -32,9 +32,7 @@ export class FetchError extends Error {
   }: {
     message: string
     response: Response
-    data: {
-      message: string
-    }
+    data: unknown
   }) {
     // Pass remaining arguments (including vendor specific ones) to parent constructor
     super(message)
