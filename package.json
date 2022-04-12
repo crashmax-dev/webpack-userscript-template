@@ -2,7 +2,7 @@
   "name": "webpack-userscript-template",
   "version": "0.0.1",
   "description": "webpack-userscript-template",
-  "homepage": "https://crashmax-off.github.io/webpack-userscript-template/",
+  "homepage": "https://crashmax-dev.github.io/webpack-userscript-template/",
   "scripts": {
     "dev": "webpack server --node-env development",
     "build": "webpack --node-env production --progress",
