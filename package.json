@@ -20,7 +20,7 @@
     "url": "git+https://github.com/crashmax-dev/webpack-userscript-template.git"
   },
   "dependencies": {
-    "redom": "^3.27.3"
+    "redom": "^3.28.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
