@@ -30,6 +30,6 @@
 
 * Navigate to `chrome://flags/#allow-insecure-localhost`, enable insecure localhost
 * Navigate to `chrome://extensions/?id=dhdgffkkebhmkfjojejmpbldmpobfkfo` (Chrome manage extensions page of `Tampermonkey`) and enable `Allow access to file URLs` (you need to manual reload page when dev userscript, see [#475](https://github.com/Tampermonkey/tampermonkey/issues/475#issuecomment-348594785) for more detail)
-* `npm install`
-* `npm run dev`
+* `pnpm install`
+* `pnpm dev`
 * Open `https://localhost:8080/webpack-userscript-template.proxy.user.js` in browser (click Advanced -> proceed if it shows a security warning) to install the proxy script.
