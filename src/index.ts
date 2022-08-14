@@ -1,9 +1,11 @@
 import { el, mount } from 'redom'
-import fetcher from './utils/fetcher'
-import watcher from './utils/safe-event-emitter'
 import './styles/global.scss'
+import { domObserver } from './utils/dom-observer'
+import { fetcher } from './utils/fetcher'
+import { routerObserver } from './utils/router-observer'
+import watcher from './utils/safe-event-emitter'
 
-(async () => {
+;(async () => {
   /** RE:DOM */
   const logo = el('img', {
     src: BASE_PATH + 'typescript.png',

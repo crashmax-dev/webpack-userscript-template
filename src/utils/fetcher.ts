@@ -1,4 +1,4 @@
-export default async function fetcher<T = unknown>(
+export async function fetcher<T = unknown>(
   input: RequestInfo,
   init?: RequestInit
 ): Promise<T> {
@@ -6,7 +6,7 @@ export default async function fetcher<T = unknown>(
 
   // if the server replies, there's always some data in json
   // if there's a network error, it will throw at the previous line
-  const data = await response.json() as T
+  const data = (await response.json()) as T
 
   // response.ok is true when res.status is 2xx
   // https://developer.mozilla.org/en-US/docs/Web/API/Response/ok
