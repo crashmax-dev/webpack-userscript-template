@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "webpack server --node-env development",
     "build": "webpack --node-env production --progress",
-    "lint": "eslint . --ext ts",
-    "lint:fix": "eslint . --ext ts --fix"
+    "format": "prettier --write --ignore-unknown src"
   },
   "author": {
     "name": "Vitalij Ryndin",
@@ -28,7 +27,7 @@
     "@babel/preset-env": "^7.18.10",
     "@babel/preset-typescript": "^7.18.6",
     "@babel/register": "^7.18.9",
-    "@crashmax/eslint-config": "^1.1.1",
+    "@crashmax/prettier-config": "^2.0.3",
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/tampermonkey": "^4.0.5",
     "@types/terser-webpack-plugin": "^4.2.2",
